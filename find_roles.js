@@ -1,0 +1,10 @@
+const fs = require('fs');
+const lines = fs.readFileSync('D:/discord_bot/bot.js', 'utf8').split('\n');
+console.log('--- updateroles ---');
+lines.forEach((l, i) => { if (l.includes('!updateroles')) console.log((i+1) + ': ' + l.trim()); });
+console.log('--- customId.startsWith(\\'role_\\') ---');
+lines.forEach((l, i) => { if (l.includes("startsWith('role_')")) console.log((i+1) + ': ' + l.trim()); });
+console.log('--- updateNickname ---');
+lines.forEach((l, i) => { if (l.includes('async function updateNickname')) console.log((i+1) + ': ' + l.trim()); });
+console.log('--- setup ---');
+lines.forEach((l, i) => { if (l.includes("cmd === 'setup'")) console.log((i+1) + ': ' + l.trim()); });
